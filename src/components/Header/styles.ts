@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Conteiner = styled.header`
+export const Container = styled.header`
   background: #d73035;
   display: flex;
   justify-content: center;

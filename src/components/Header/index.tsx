@@ -1,9 +1,9 @@
 import logo from '../../assets/images/logo.svg'
-import { Conteiner, Content } from './styles'
+import { Container, Content } from './styles'
 
 export function Header() {
   return (
-    <Conteiner>
+    <Container>
       <Content>
         <div className="page-details">
           <h1>Pedidos</h1>
@@ -12,6 +12,6 @@ export function Header() {
 
         <img src={logo} alt="WAITERAPP"></img>
       </Content>
-    </Conteiner>
+    </Container>
   )
 }
