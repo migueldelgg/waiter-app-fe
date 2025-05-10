@@ -1,5 +1,5 @@
-import logo from '../../assets/images/logo.svg'
-import { Container, Content } from './styles'
+import logo from '../../assets/images/logo.svg';
+import { Container, Content } from './styles';
 
 export function Header() {
   return (
@@ -13,5 +13,5 @@ export function Header() {
         <img src={logo} alt="WAITERAPP"></img>
       </Content>
     </Container>
-  )
+  );
 }

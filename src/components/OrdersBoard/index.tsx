@@ -1,5 +1,5 @@
-import { Order } from "../../types/order";
-import { Board, OrdersContainer } from "./styles";
+import { Order } from '../../types/order';
+import { Board, OrdersContainer } from './styles';
 
 interface OrdersBoardProps {
   icon: string;
@@ -27,5 +27,5 @@ export function OrdersBoard({ icon, title, orders }: OrdersBoardProps) {
         </OrdersContainer>
       )}
     </Board>
-  )
+  );
 }
