@@ -40,7 +40,7 @@ export const ModalBody = styled.div`
 
     small{
       font-size: 14px;
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     div {
@@ -121,5 +121,37 @@ export const OrderDetails = styled.div`
       font-weight: 500;
       opacity: 0.8;
     }
+  }
+`;
+
+export const Actions = styled.footer`
+  margin-top: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .cancel-button {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    border: 0;
+    background: transparent;
+    font-weight: 600;
+    font-size: 16px;
+    color: #D73035;
+  }
+
+  .ok-button {
+    display: flex;
+    align-items: center;
+    background-color: #D73035; /* vermelho */
+    color: white;
+    padding: 14px 30px; /* altura e largura interna */
+    border: none;
+    border-radius: 44px; /* forma de pílula */
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
   }
 `;

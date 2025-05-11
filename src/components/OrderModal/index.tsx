@@ -1,21 +1,36 @@
 import closeIcon from '../../assets/images/close-icon.svg';
 
-import { Overlay, ModalBody, OrderDetails } from './styles.ts';
+import { Overlay, ModalBody, OrderDetails, Actions } from './styles.ts';
 import { Order } from '../../types/order.ts';
 
 import { formatCurrency } from '../../utils/formatCurrency.ts';
 import { calculateOrder } from '../../utils/calculateOrder.ts';
+import { useEffect } from 'react';
 
 interface OrderModalProps {
   visible: boolean;
   order: Order | null;
+  onClose: () => void;
 }
 
-export function OrderModal({ visible, order }: OrderModalProps) {
+export function OrderModal({ visible, order, onClose }: OrderModalProps) {
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
   if (!visible || !order) {
     return null;
   }
-
 
   return (
     <Overlay>
@@ -24,7 +39,7 @@ export function OrderModal({ visible, order }: OrderModalProps) {
           <strong>Mesa {order.table}</strong>
 
           <button type="button">
-            <img src={closeIcon} alt={'close icon'} />
+            <img src={closeIcon} alt={'close icon'} onClick={onClose} />
           </button>
         </header>
 
@@ -75,6 +90,15 @@ export function OrderModal({ visible, order }: OrderModalProps) {
             <strong>{formatCurrency(calculateOrder(order))}</strong>
           </div>
         </OrderDetails>
+
+        <Actions>
+          <button className="cancel-button" type="button">
+            Cancelar Pedido
+          </button>
+          <button className="ok-button" type="button">
+            Concluir Pedido
+          </button>
+        </Actions>
       </ModalBody>
     </Overlay>
   );
