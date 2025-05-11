@@ -1,6 +1,6 @@
-import { Order } from "../../types/order.ts";
-import { OrdersBoard } from "../OrdersBoard/index.tsx"
-import { Container } from "./styles"
+import { Order } from '../../types/order.ts';
+import { OrdersBoard } from '../OrdersBoard/index.tsx';
+import { Container } from './styles';
 
 const orders: Order[] = [
   {
@@ -37,5 +37,5 @@ export function Orders() {
       <OrdersBoard icon="👩‍🍳" title="Em produção" orders={[]} />
       <OrdersBoard icon="✅" title="Finalizado" orders={[]} />
     </Container>
-  )
+  );
 }
